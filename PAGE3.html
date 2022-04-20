@@ -1,0 +1,98 @@
+<html>
+
+<title> Know Your Meme (New Memes)</title>
+<body style = "background-color: rgb(100,170,255);">
+
+	<button id ="but1" onclick="display_random_image()" style = "color: rgb(24,69,59); background-color: rgb(200,200,200); font-size: 50px; margin-bottom: 30px; font-family: Trebuchet MS"> RANDOM MEME </button>
+    <button id="but2" onclick="leave()" style = "color: rgb(200,10,10); background-color: rgb(200,200,200); font-size: 50px; margin-left: 300px; font-family: Trebuchet MS"> ANSWERS </button>
+	<script>
+		function display_random_image() 
+{
+     var theImages = [{
+        src: "woop.jpg",
+        width: "500",
+        height: "500",
+    }, {
+        src: "look.jpg",
+        width: "500",
+        height: "500"
+    }, {
+        src: "sweat.jpg",
+        width: "500",
+        height: "500"
+    }, {
+
+        src: "bitches.jpg",
+        width: "500",
+        height: "500"
+    }, {
+        src: "always.jpg",
+        width: "500",
+        height: "500"
+    }, {
+        src: "trade.jpg",
+        width: "500",
+        height: "500"
+    }, {    
+
+        src: "clown.jpg",
+        width: "500",
+        height: "500"
+    }, {
+    
+        src: "will.jpg",
+        width: "500",
+        height: "500"
+    }, {
+    
+        src: "inc.jpg",
+        width: "500",
+        height: "500"
+    }, {
+       
+        src: "stonk.jpg",
+        width: "500",
+        height: "500"
+
+
+    }];
+    
+    var preBuffer = [];
+    for (var i = 0, j = theImages.length; i < j; i++) {
+        preBuffer[i] = new Image();
+        preBuffer[i].src = theImages[i].src;
+        preBuffer[i].width = theImages[i].width;
+        preBuffer[i].height = theImages[i].height;
+    }
+   
+  function getRandomInt(min,max) 
+    {
+    
+imn = Math.floor(Math.random() * (max - min + 1)) + min;
+    return preBuffer[imn];
+    }  
+  
+var newImage = getRandomInt(0, preBuffer.length - 1);
+ 
+// remove the previous images
+var images = document.getElementsByTagName('img');
+var l = images.length;
+for (var p = 0; p < l; p++) {
+    images[0].parentNode.removeChild(images[0]);
+}
+document.body.appendChild(newImage);
+}
+
+        function leave(){
+            document.getElementById("but2").onclick = location.href = "PAGE5.html"
+        }
+
+	</script>
+
+
+</body>
+
+
+
+
+</html>
